@@ -1,6 +1,6 @@
 public class Radio {
-    public int currentRadioStation;
-    public int volume = 10;
+    private int currentRadioStation;
+    private int volume = 10;
 
     public int getCurrentRadioStation() {
         return currentRadioStation;
@@ -34,6 +34,16 @@ public class Radio {
 
     public int getVolume() {
         return volume;
+    }
+
+    public void setVolume(int newVolume){
+        if (newVolume < 0 ){
+            return;
+        }
+        if (newVolume > 100){
+            return;
+        }
+        volume = newVolume;
     }
 
     public void increaseVolume() {
